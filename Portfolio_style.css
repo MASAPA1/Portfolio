@@ -159,15 +159,13 @@ html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;back
   cursor:pointer;
 }
 .carousel { position: relative; }
-/* Hide horizontal scrollbar by default; reveal when hovering the carousel */
 .carousel-viewport {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;        /* Firefox: hide */
-  -ms-overflow-style: none;     /* IE/Edge fallback: hide */
+  scrollbar-width: none;        
+  -ms-overflow-style: none;     
 }
 
-/* WebKit: set scrollbar height to 0 so it's invisible */
 .carousel-viewport::-webkit-scrollbar {
   height: 0;
   transition: height 180ms ease;
@@ -178,16 +176,15 @@ html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;back
   border: 2px solid rgba(0,0,0,0.16);
 }
 
-/* show a thin translucent scrollbar when user hovers the carousel area or focuses it */
 .carousel-wrap:hover .carousel-viewport,
 .carousel-viewport:hover,
 .carousel-viewport:focus {
-  scrollbar-width: thin; /* Firefox: show thin */
+  scrollbar-width: thin; 
 }
 .carousel-wrap:hover .carousel-viewport::-webkit-scrollbar,
 .carousel-viewport:hover::-webkit-scrollbar,
 .carousel-viewport:focus::-webkit-scrollbar {
-  height: 8px; /* WebKit: reveal */
+  height: 8px; 
 }
 .carousel-wrap:hover .carousel-viewport::-webkit-scrollbar-thumb,
 .carousel-viewport:hover::-webkit-scrollbar-thumb,
@@ -341,38 +338,35 @@ section,
   z-index:1200;
   align-items:center;
   justify-content:center;
-  background: rgba(6,8,10,0.42); /* subtle tinted window */
+  background: rgba(6,8,10,0.42); 
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
 .lightbox.open{ display:flex; }
-/* lightbox layout: slightly larger and a bit more breathing room */
 .lightbox-content{
   position:relative;
   z-index:2;
-  max-width:1300px;      /* increased slightly to make it a bit bigger */
+  max-width:1300px;      
   width:92vw;
   max-height:92vh;
   padding:20px;
   box-sizing:border-box;
   display:grid;
-  grid-template-columns: 1fr 480px; /* wider meta column for the description/button */
+  grid-template-columns: 1fr 480px; 
   gap:26px;
   align-items:stretch;
-  background: transparent; /* keep content panel transparent so backdrop shows through */
-}
+  background: transparent; 
 .lightbox-content img{
   width:100%;
   height:100%;
   object-fit:contain;
-  border-radius:10px; /* a touch larger radius */
+  border-radius:10px; 
   box-shadow:0 30px 80px rgba(0,0,0,0.65);
   background:#111;
 }
 
-/* meta panel on the right: tinted "window" effect */
 .lightbox-meta{
-  background: linear-gradient(rgba(18,18,18,0.56), rgba(18,18,18,0.46)); /* tinted, see-through */
+  background: linear-gradient(rgba(18,18,18,0.56), rgba(18,18,18,0.46)); 
   padding:24px;
   border-radius:14px;
   position:relative;
@@ -499,11 +493,10 @@ section,
 /* --- 3D carousel (scoped to Certificates section) --- */
 /* push certificates lower */
 #achievements {
-  margin-top: 110px; /* increased top space so heading is lower on the page */
+  margin-top: 110px; 
   position: relative;
 }
 
-/* container perspective only for this section */
 #achievements .drag-root {
   -webkit-perspective: 1000px;
   perspective: 1000px;
@@ -519,7 +512,6 @@ section,
   margin: 18px auto;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  /* keep flat (no X tilt) */
   -webkit-transform: rotateX(0deg);
   transform: rotateX(0deg);
   width: 100%;
@@ -529,20 +521,17 @@ section,
   justify-content: center;
 }
 
-/* ensure spin container preserves 3D and card backs are visible */
 #achievements #spin-container {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
-/* show the card when it's on the far side (so you can see all items) */
 #achievements #spin-container img,
 #achievements #spin-container video {
   -webkit-backface-visibility: visible;
   backface-visibility: visible;
 }
 
-/* 3D carousel animation keyframes (rotate around Y while keeping tilt) */
 @-webkit-keyframes spin {
   from { -webkit-transform: rotateY(0deg); transform: rotateY(0deg); }
   to   { -webkit-transform: rotateY(360deg); transform: rotateY(360deg); }
@@ -560,44 +549,40 @@ section,
   to   { -webkit-transform: rotateY(0deg); transform: rotateY(0deg); }
 }
 
-/* make container height adapt to image height + padding (allow dynamic resizing) */
 #achievements #drag-container,
 #achievements #spin-container {
   height: auto;
-  min-height: 260px; /* fallback tall enough for visual */
-  padding-top: 36px;   /* increased top padding so carousel items sit lower */
+  min-height: 260px; 
+  padding-top: 36px;   
   padding-bottom: 40px;
 }
 
-/* add specific spacing for the section title inside achievements */
 #achievements h2 {
-  margin-top: 8px;    /* small offset from top of section */
-  margin-bottom: 26px; /* larger gap between the "Certificate" word and the carousel */
-  padding-left: 18px; /* align heading visually with carousel center */
+  margin-top: 8px;    
+  margin-bottom: 26px; 
+  padding-left: 18px; 
   font-size: 1.25rem;
 }
 
-/* small responsive tweaks (allow carousel to expand circle on narrow viewports) */
 @media (max-width: 720px) {
   #achievements #drag-container { min-height: 220px; padding-bottom: 28px; }
   #achievements #ground { width: 520px; height: 520px; }
 }
 
-/* Add larger vertical spacing before Projects section so page scrolls longer */
+
 #projects {
-  margin-top: 220px; /* increase or reduce this value to taste */
+  margin-top: 220px; 
   padding-top: 12px;
 }
 
 #projects .carousel-wrap {
-  margin-top: 28px; /* extra space between title and carousel */
+  margin-top: 28px; 
 }
 
 #achievements #drag-container {
-  /* remove tilt: ensure no rotateX here */
+  
   transform: none;
-  /* or: transform: rotateX(0deg); */
-  touch-action: none;          /* allow both horizontal and vertical pointer moves */
+  touch-action: none;         
   cursor: grab;
   user-select: none;
   -webkit-user-select: none;
@@ -759,3 +744,4 @@ section,
 }
 
 
+}
