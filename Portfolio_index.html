@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Portfolio</title>
+    <link rel="stylesheet" href="Portfolio_style.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="top-nav">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#achievements">Certificates</a>
+            <a href="#contact">Contact</a>
+            <button id="theme-toggle" class="theme-toggle" aria-pressed="false" title="Toggle theme">Theme</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="card card-left">
+                <div class="profile-area">
+                    <img id="profile-img" src="MASAPA draft pfp copy.png" alt="Profile Picture">
+                </div>
+
+                <div class="profile-info">
+                    <h3 class="quick-title">
+                        <dl class="quick-list">
+                            <div class="quick-item">
+                                <dt>Experience</dt>
+                                <dd><strong>6 months</strong><span class="muted">Web / UI / Apps</span></dd>
+                            </div>
+                            <div class="quick-item">
+                                <dt>Featured</dt>
+                                <dd><strong>3 Projects</strong><span class="muted">Team & Solo</span></dd>
+                            </div>
+                        </dl>
+                        <div class="skills">
+                            <strong>Skills</strong>
+                            <p>HTML  CSS  JS  React  Figma  UX Design</p>
+                        </div>
+                </div>
+
+            </div>
+
+            <div class="card card-center">
+                <div class="meta">
+                    <span class="name-small">Daryll Masapa</span>
+                    <span class="roles">Web Developer  Designer  Programmer</span>
+                </div>
+
+                <h1 class="hero-title">The Project of<br/>Daryll Masapa</h1>
+
+                <div class="hero-blurb">
+                    <p>
+                        Throughout my college journey, I successfully completed a variety of projects that enhanced my skills in technology, design, and problem-solving. These include fully functional applications, interactive prototypes, and research-based outputs.
+                    </p>
+                </div>
+
+                <div class="hero-ctas">
+                    <a href="#projects" class="btn btn-primary">See Featured Works</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="about" class="about-card card">
+            <h2 class="about-title">About me</h2>
+            <h3 class="about-name">Hi, I'm Daryll Dave R. Masapa  also known as Mira</h3>
+            <p class="about-role">BSIS - 2nd Year  Aspiring Web Developer, Data Analyst and Information Systems Student</p>
+            <p class="about-desc">
+                6 months of experience in HTML, CSS, JavaScript, Java, Python, and C++. Throughout my college journey, I successfully completed a variety of projects that enhanced my skills in technology, design, and problem-solving. These include fully functional applications,
+                interactive prototypes, and research-based outputs.
+            </p>
+            <div class="hero-ctas about-ctas">
+                <a href="#projects" class="btn btn-primary">See Featured Works</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+        </section>
+
+        <section id="achievements" class="section-block">
+            <h2>Certificate</h2>
+
+            <style>
+                /* Parent perspective (keeps 3D but no tilt) */
+                
+                #achievements {
+                    perspective: 1400px;
+                    -webkit-perspective: 1400px;
+                    padding-top: 10px;
+                    /* remove extra top padding */
+                    margin-top: px;
+                    /* pull section slightly closer to About */
+                }
+                /* Allow JS to control transforms  DO NOT use !important to block inline styles */
+                
+                #achievements #drag-container,
+                #achievements #spin-container {
+                    position: relative;
+                    margin: auto;
+                    transform-style: preserve-3d;
+                    -webkit-transform-style: preserve-3d;
+                    /* no forced transform here (removed 'transform: none !important') */
+                }
+                /* Landscape card size */
+                
+                #achievements #spin-container {
+                    width: 320px;
+                    height: 210px;
+                    transform-origin: center center;
+                }
+                /* Card appearance with glass reflection */
+                
+                #achievements #spin-container img {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    background: #fff;
+                    border-radius: 6px;
+                    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+                    /* allow seeing cards when the container tilts (back side visible) */
+                    backface-visibility: visible;
+                    -webkit-backface-visibility: visible;
+                    -webkit-transform-style: preserve-3d;
+                    transform-style: preserve-3d;
+                    -webkit-box-reflect: below 8px linear-gradient(transparent, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.45));
+                }
+                /* Ground */
+                
+                #achievements #ground {
+                    position: absolute;
+                    left: 50%;
+                    top: 100%;
+                    transform: translate(-50%, -50%) rotateX(90deg);
+                    width: 900px;
+                    height: 900px;
+                    background: radial-gradient(circle farthest-side, rgba(0, 0, 0, 0.40), transparent);
+                    pointer-events: none;
+                }
+            </style>
+
+            <div id="drag-container" aria-label="Certificates carousel">
+                <div id="spin-container">
+                    <img src="Screenshot 2025-11-28 171926.png" alt="Certificate 1" />
+                    <img src="Screenshot 2025-11-28 171949.png" alt="Certificate 2" />
+                    <img src="Screenshot 2025-11-28 171900.png" alt="Certificate 3" />
+                    <img src="Screenshot 2025-11-28 172008.png" alt="Certificate 4" />
+                    <img src="Screenshot 2025-11-28 172042.png" alt="Certificate 5" />
+                    <img src="Screenshot 2025-11-28 172108.png" alt="Certificate 6" />
+                    <p style="display:none">Certificates</p>
+                </div>
+                <div id="ground"></div>
+            </div>
+
+            
+</body>
+
+</html>
+
+
+
+

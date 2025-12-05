@@ -1,0 +1,24 @@
+<!-- Add a data-driven certificate card (place inside your carousel-track where other .certificate-card items live) -->
+<div class="certificate-card"
+     data-title="Google"
+     data-desc='Completed the “Foundations of User Experience (UX) Design” course by Google through Coursera. This certificate covers UX principles, design processes and user-centered solutions.'
+     data-link="https://coursera.org/share/c98ba0fae274a250b8cb490410728d36">
+  <img src="assets/cert-google-thumb.jpg" alt="Google certificate thumbnail">
+</div>
+
+<!-- Lightbox: add near end of <body> (one instance) -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-backdrop" data-lightbox-close></div>
+  <div class="lightbox-content" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-meta">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">✕</button>
+      <h2 id="lightbox-title"></h2>
+      <p id="lightbox-desc"></p>
+      <a id="lightbox-link" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Open certificate</a>
+    </div>
+  </div>
+</div>
+
+<!-- include script at the end of body -->
+<script src="./Portfolio_main.js"></script>
